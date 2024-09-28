@@ -1,0 +1,5 @@
+#!/bin/bash
+ssh dingxn@phoenix 'cat /proc/stat' > /tmp/energy
+./parsecmgmt -a run -p $1 -i native -n 16 -c gcc
+ssh dingxn@phoenix 'cat /proc/stat' >> /tmp/energy
+awk -f energy.awk /tmp/energy
