@@ -113,7 +113,17 @@ int main(int argc, char *argv[])
 		// When these pages are accessed again, the OS will allocate them back.
 		// We suggest that you use madvise() in this manner to create "holes"
 		// in a continguously allocated region.
-		madvise(data[i] + j, 4096, MADV_DONTNEED);
+
+        for (j = 0; j < CHUNK; ) {
+
+			int step_size = (rand() % (64 - 1) + 1) * 4096;  // Random step between 4KB and 64KB
+
+            if (rand() % 2 == 0) { // Randomly deallocate to create fragmentation
+                madvise(data[i] + j, 4096, MADV_DONTNEED); // Reclaimable page
+                printf("Fragmenting chunk %d at offset %d\n", i, j);
+            }
+			j += step_size;
+        }
 //==================================================================================
 	}	
 
