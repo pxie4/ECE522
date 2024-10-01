@@ -1,3 +1,15 @@
+[PARSEC] [========== PARSEC 3.0-beta-20120904 RUN LOGFILE ==========]
+
+[PARSEC] Run with amd64-linux.gcc-pthreads binaries and input native started on Mon Sep 30 17:33:46 MDT 2024.
+[PARSEC] Benchmarks to run:  parsec.canneal
+
+[PARSEC] [========== Running benchmark parsec.canneal [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'native'.
+2500000.nets
+[PARSEC] Running 'time /users/pxie4/ECE522/mp2/hugepage/parsec-3.0/pkgs/kernels/canneal/inst/amd64-linux.gcc-pthreads/bin/canneal 1 15000 2000 2500000.nets 6000':
+[PARSEC] [---------- Beginning of output ----------]
 PARSEC Benchmark Suite Version 3.0-beta-20120904
 Threadcount: 1
 15000 swaps per temperature step
@@ -34,6 +46,8 @@ Just saw element: 2500000
 netlist created. 2500000 elements.
 Final routing is: 9.03315e+09
 
-real	3m58.110s
-user	3m57.600s
-sys	0m0.509s
+real	4m8.939s
+user	4m8.458s
+sys	0m0.480s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC] Done.
